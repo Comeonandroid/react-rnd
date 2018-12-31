@@ -482,13 +482,15 @@ export default class Rnd extends React.Component<Props, State> {
     if (!this.state.isMounted) return <div />;
     const maxHeight = this.props._freeBottomBounds ? 2147483647 : this.state.maxHeight; // eslint-disable-line
     let degree = 0;
-    if (this.resizable && this.resizable.degree) {
-      degree = this.resizable.degree;
-      this.degree = degree;
-    } else if (this.props.default) {
-      degree = this.props.default.degree;
-      this.degree = degree;
-    }
+    // if (this.resizable && this.resizable.degree) {
+    //   degree = this.resizable.degree;
+    //   this.degree = degree;
+    // } else if (this.props.default) {
+    //   degree = this.props.default.degree;
+    //   this.degree = degree;
+    // }
+    degree = this.props.default.degree;
+    this.degree = degree;
     let position = { x: 0, y: 0 };
     if (this.draggable && this.draggable.positionRotate) {
       position = this.draggable.positionRotate;
